@@ -22,7 +22,6 @@ Ytrain=Ytrain';
 [Xval, normalizationParams] = zScoreNormalization(Xval, 'usePredefined',normalizationParams_X.mean,normalizationParams_X.std);
 Xval=Xval';
 [Yval, normalizationParams] = zScoreNormalization(Yval, 'usePredefined',normalizationParams_Y.mean,normalizationParams_Y.std);Yval=Yval';
-Yval=Yval';
 %% MDN Fix Architecture
 % [net, y_pred_val]=MDN_Reg_FN(2,50,800, Xtrain,Ytrain,Xval,Yval)
 % figure;densityScatter(Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean, y_pred_val'.*normalizationParams_Y.std+normalizationParams_Y.mean)
