@@ -1,3 +1,7 @@
+% Con il metodo del supervisore, devi ricordarti di commentare delle righe e non fare clear
+% Con questo metodo invece la prima volta MATLAB crea il file e le volte successive lo rilegge quindi usa sempre gli stessi samples.
+
+
 %% Data Preperation
 
 splitFile = "random_split_70_30.mat";
