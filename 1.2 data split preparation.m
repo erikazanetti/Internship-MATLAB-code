@@ -1,5 +1,6 @@
 % Con il metodo del supervisore, devi ricordarti di commentare delle righe e non fare clear
 % Con questo metodo invece la prima volta MATLAB crea il file e le volte successive lo rilegge quindi usa sempre gli stessi samples.
+% ATTENZIONE Questo funziona bene solo se nei prossimi dataset (DSF, TOA, BOA) le righe saranno nello stesso ordine del dataset RAdCor.
 
 
 %% Data Preperation
