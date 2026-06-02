@@ -42,9 +42,6 @@ Ypred_plot = Ypred_plot(:);
 figure;
 densityScatter(Yval_plot, Ypred_plot)
 
-title('MLP - TSS - Random split')
-xlabel('In-situ TSS [g/m^3]')
-ylabel('Predicted TSS [g/m^3]')
 % figure;densityScatter(Yval, y_pred_MLP)
 
 title('MLP')
