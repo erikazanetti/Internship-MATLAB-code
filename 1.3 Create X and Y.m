@@ -40,4 +40,4 @@ disp([min(Y), max(Y), mean(Y)])
 
 %% Run MLP script
 
-Run_reg_MLP_clean
+Run_reg_clean
