@@ -22,10 +22,7 @@ Ytrain=Ytrain';
 [Xval, normalizationParams] = zScoreNormalization(Xval, 'usePredefined',normalizationParams_X.mean,normalizationParams_X.std);
 Xval=Xval';
 [Yval, normalizationParams] = zScoreNormalization(Yval, 'usePredefined',normalizationParams_Y.mean,normalizationParams_Y.std);Yval=Yval';
-%% MDN Fix Architecture
-% [net, y_pred_val]=MDN_Reg_FN(2,50,800, Xtrain,Ytrain,Xval,Yval)
-% figure;densityScatter(Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean, y_pred_val'.*normalizationParams_Y.std+normalizationParams_Y.mean)
-% title('MDN Fixed')
+
 %% MLP
 [model, y_pred_MLP] = MLP_reg_FN(Xtrain, Ytrain, Xval, Yval,"bayes")
  figure;densityScatter(Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean, y_pred_MLP.*normalizationParams_Y.std+normalizationParams_Y.mean)
@@ -35,7 +32,10 @@ title('MLP')
 xlabel('In-situ TSM [g/m^3]')
 ylabel('Predicted TSM [g/m^3]')
 
-[R2_MLP RMSE_MLP Bias_MLP MAE_MLP cRMSE_MLP NRMSE_MLP NMAE_MLP NcRMSE_MLP ALL_Stats_MLP]= AccuracyMetrics(y_pred_MLP'.*normalizationParams_Y.std+normalizationParams_Y.mean, Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean)
+%% Accurancy metrics
+% A separate file called AccurancyMetrics.m is required
+% If you do not have it, leave this commented
+% [R2_MLP RMSE_MLP Bias_MLP MAE_MLP cRMSE_MLP NRMSE_MLP NMAE_MLP NcRMSE_MLP ALL_Stats_MLP]= AccuracyMetrics(y_pred_MLP'.*normalizationParams_Y.std+normalizationParams_Y.mean, Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean)
 %% MDN Auto
  [net, y_pred_MDN, bayesResults] = AutoMDN("bayesopt", [], [], 600,Xtrain, Ytrain, Xval, Yval);
  figure;densityScatter(Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean, y_pred_MDN'.*normalizationParams_Y.std+normalizationParams_Y.mean)
