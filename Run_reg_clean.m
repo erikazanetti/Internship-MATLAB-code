@@ -40,12 +40,12 @@ ylabel('Predicted TSM [g/m^3]')
 % If you do not have it, leave this commented
 % [R2_MLP RMSE_MLP Bias_MLP MAE_MLP cRMSE_MLP NRMSE_MLP NMAE_MLP NcRMSE_MLP ALL_Stats_MLP]= AccuracyMetrics(y_pred_MLP'.*normalizationParams_Y.std+normalizationParams_Y.mean, Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean)
 %% MDN Auto
- [net, y_pred_MDN, bayesResults] = AutoMDN("bayesopt", [], [], 600,Xtrain, Ytrain, Xval, Yval);
- figure;densityScatter(Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean, y_pred_MDN'.*normalizationParams_Y.std+normalizationParams_Y.mean)
-title('MDN Auto')
-xlabel('In-situ Chl-a [mg/m^3]')
-ylabel('Predicted Chl-a [mg/m^3]')
-[R2_MDN RMSE_MDn Bias_MDN MAE_MDN cRMSE_MDN NRMSE_MDN NMAE_MDN NcRMSE_MDN ALL_Stats_MDN]= AccuracyMetrics(y_pred_MDN'.*normalizationParams_Y.std+normalizationParams_Y.mean, Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean)
+% [net, y_pred_MDN, bayesResults] = AutoMDN("bayesopt", [], [], 600,Xtrain, Ytrain, Xval, Yval);
+% figure;densityScatter(Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean, y_pred_MDN'.*normalizationParams_Y.std+normalizationParams_Y.mean)
+%title('MDN Auto')
+%xlabel('In-situ Chl-a [mg/m^3]')
+%ylabel('Predicted Chl-a [mg/m^3]')
+%[R2_MDN RMSE_MDn Bias_MDN MAE_MDN cRMSE_MDN NRMSE_MDN NMAE_MDN NcRMSE_MDN ALL_Stats_MDN]= AccuracyMetrics(y_pred_MDN'.*normalizationParams_Y.std+normalizationParams_Y.mean, Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean)
 
 %% RF All Features
 % [y_pred_RF, model, featureInfo] = AutoRandomForest(Xtrain', Ytrain', Xval', Yval', [],"all")
