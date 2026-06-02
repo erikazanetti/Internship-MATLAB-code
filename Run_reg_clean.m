@@ -30,8 +30,21 @@ Xval=Xval';
 % figure;densityScatter(Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean, y_pred_val'.*normalizationParams_Y.std+normalizationParams_Y.mean)
 % title('MDN Fixed')
 %% MLP
-[model, y_pred_MLP] = MLP_reg_FN(Xtrain, Ytrain, Xval, Yval,"bayes")
- figure;densityScatter(Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean, y_pred_MLP.*normalizationParams_Y.std+normalizationParams_Y.mean)
+%% MLP
+[model, y_pred_MLP] = MLP_reg_FN(Xtrain, Ytrain, Xval, Yval, "bayes");
+
+Yval_plot = Yval' .* normalizationParams_Y.std + normalizationParams_Y.mean;
+Ypred_plot = y_pred_MLP' .* normalizationParams_Y.std + normalizationParams_Y.mean;
+
+Yval_plot = Yval_plot(:);
+Ypred_plot = Ypred_plot(:);
+
+figure;
+densityScatter(Yval_plot, Ypred_plot)
+
+title('MLP - TSS - Random split')
+xlabel('In-situ TSS [g/m^3]')
+ylabel('Predicted TSS [g/m^3]')
 % figure;densityScatter(Yval, y_pred_MLP)
 
 title('MLP')
