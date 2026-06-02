@@ -1,4 +1,7 @@
 %% Data Preparation
+
+rng(1)
+
 N = size(X,1);
 idx = randperm(N);
 Ntrain = round(0.7*N);
