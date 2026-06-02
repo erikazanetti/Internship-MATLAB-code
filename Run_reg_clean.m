@@ -38,7 +38,7 @@ ylabel('Predicted TSM [g/m^3]')
 %% Accurancy metrics
 % A separate file called AccurancyMetrics.m is required
 % If you do not have it, leave this commented
-% [R2_MLP RMSE_MLP Bias_MLP MAE_MLP cRMSE_MLP NRMSE_MLP NMAE_MLP NcRMSE_MLP ALL_Stats_MLP]= AccuracyMetrics(y_pred_MLP'.*normalizationParams_Y.std+normalizationParams_Y.mean, Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean)
+ [R2_MLP RMSE_MLP Bias_MLP MAE_MLP cRMSE_MLP NRMSE_MLP NMAE_MLP NcRMSE_MLP ALL_Stats_MLP]= AccuracyMetrics(y_pred_MLP'.*normalizationParams_Y.std+normalizationParams_Y.mean, Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean)
 %% MDN Auto
 % [net, y_pred_MDN, bayesResults] = AutoMDN("bayesopt", [], [], 600,Xtrain, Ytrain, Xval, Yval);
 % figure;densityScatter(Yval'.*normalizationParams_Y.std+normalizationParams_Y.mean, y_pred_MDN'.*normalizationParams_Y.std+normalizationParams_Y.mean)
