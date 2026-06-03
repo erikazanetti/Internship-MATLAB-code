@@ -64,8 +64,8 @@ if ~exist("results", "dir")
     mkdir("results")
 end
 
-exportgraphics(gcf, "results/MLP_Chla_random_split_threshold_02.png", "Resolution", 300)
-savefig(gcf, "results/MLP_Chla_random_split_threshold_02.fig")
+exportgraphics(gcf, "results/MLP_Chla_random_split_threshold_01.png", "Resolution", 300)
+savefig(gcf, "results/MLP_Chla_random_split_threshold_01.fig")
 
 save("results/MLP_Chla_random_split_threshold_02_results.mat", ...
     "model", ...
