@@ -30,3 +30,8 @@ summary_Chla = groupsummary(T_chla, ...
     "chl_a_mean");
 
 disp(summary_Chla)
+
+%% Save summary
+
+writetable(summary_TSS, "summary_TSS_by_image.xlsx")
+writetable(summary_Chla, "summary_Chla_by_image_threshold_01.xlsx")
