@@ -40,7 +40,7 @@ disp([min(Y), max(Y), mean(Y)])
 
 %% Run MLP script
 
-Run_reg_clean_TSS
+Run_reg_clean
 
 title('MLP')
 xlabel('In-situ TSM [g/m^3]')
