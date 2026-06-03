@@ -58,6 +58,10 @@ disp([min(Y), max(Y), mean(Y)])
 
 Run_reg_clean
 
+title('MLP')
+xlabel('In-situ Chl-a [μg/L]')
+ylabel('Predicted Chl-a [μg/L]')
+
 %% Save results
 
 if ~exist("results", "dir")
