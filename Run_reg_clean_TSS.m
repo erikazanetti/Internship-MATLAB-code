@@ -44,9 +44,6 @@ densityScatter(Yval_plot, Ypred_plot)
 
 % figure;densityScatter(Yval, y_pred_MLP)
 
-title('MLP')
-xlabel('In-situ TSM [g/m^3]')
-ylabel('Predicted TSM [g/m^3]')
 
 %% Accurancy metrics
 % A separate file called AccurancyMetrics.m is required
