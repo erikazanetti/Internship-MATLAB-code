@@ -8,9 +8,6 @@ T = readtable("Ebro_TOA_data.xlsx", ...
     "Sheet", "Sentinel TOA data", ...
     "VariableNamingRule", "preserve");
 
-%% Remove rows with missing target values
-
-T = T(~isnan(T.TSS_mean), :);
 
 %% Define input bands and target
 
