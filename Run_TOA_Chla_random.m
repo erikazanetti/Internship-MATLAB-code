@@ -58,7 +58,7 @@ disp([min(Y), max(Y), mean(Y)])
 
 Run_reg_clean_randomsplit
 
-title('MLP')
+title('MLP - TOA - Chl-a - Random split')
 xlabel('In-situ Chl-a [μg/L]')
 ylabel('Predicted Chl-a [μg/L]')
 
@@ -68,10 +68,10 @@ if ~exist("results", "dir")
     mkdir("results")
 end
 
-exportgraphics(gcf, "results/MLP_Chla_random_split_threshold_01.png", "Resolution", 300)
-savefig(gcf, "results/MLP_Chla_random_split_threshold_01.fig")
+exportgraphics(gcf, "results/MLP_TOA_Chla_random_split_threshold_01.png", "Resolution", 300)
+savefig(gcf, "results/MLP_TOA_Chla_random_split_threshold_01.fig")
 
-save("results/MLP_Chla_random_split_threshold_02_results.mat", ...
+save("results/MLP_TOA_Chla_random_split_threshold_01.mat", ...
     "model", ...
     "idx", ...
     "Xtrain", "Ytrain", ...
