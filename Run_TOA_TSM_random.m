@@ -8,7 +8,6 @@ T = readtable("Ebro_TOA_data.xlsx", ...
     "Sheet", "Sentinel TOA data", ...
     "VariableNamingRule", "preserve");
 
-
 %% Define input bands and target
 
 bandCols = {'B1_mean','B2_mean','B3_mean','B4_mean','B5_mean','B6_mean','B7_mean','B8_mean','B8a_mean'};
